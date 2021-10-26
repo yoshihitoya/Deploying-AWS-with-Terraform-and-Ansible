@@ -4,6 +4,9 @@
   remote_user: ec2-user
   become_user: root
   tasks:
+    - name: install epel
+      shell: /usr/bin/amazon-linux-extras install epel -y
+
     - name: install dependencies
       yum:
         name: "{{ package }} "
@@ -13,6 +16,7 @@
         - wget
         - java-1.8.0-openjdk-devel
         - git
+        - daemonize
       
     - name: clone repo
       git:
