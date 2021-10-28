@@ -1,12 +1,17 @@
-# TerraformとAnsibleを用いて、VPC peeringを行った別リージョンにJenkins workerを複数立ち上げてデプロイする
+## TerraformとAnsibleを用いて、VPC peeringを行った別リージョンにJenkins workerを複数立ち上げてデプロイする
+
+
 
 
 `以下の構成図に沿って、構築を行いました`
 
+
 ![構成図](./img/portofolio.png "portofolio")
 
 
+
 ## 以下の手順に沿って、構築を行います
+
 
 
 ```
@@ -16,7 +21,9 @@
 4. 1で設定したURLにアクセスし、Jenkinsの管理画面からmasterとworkergaできていることを確認する
 ```
 
+
 ## オプション
+
 
 ```
 
