@@ -1,4 +1,4 @@
-# Terraform と Ansibleを用いて、VPC peeringを行った
+# TerraformとAnsibleを用いて、VPC peeringを行った別リージョンにJenkins workerを複数立ち上げてデプロイする
 
 
 `以下の構成図に沿って、構築を行いました`
@@ -11,6 +11,16 @@
 
 ```
 1. ACMで使用するドメインを取得し、variables.tfの"dns-name"のdefaultに記載する
-2. 
-3. 
+2. aws s3api create-bucket --bucket [your unique bucket name]を実行、構築し、backend.tfの bucket に [your unique bucket name]を記載する
+3. terraform init → terraform fmt → terraform validate → terraform plan → teraform applyの順にコマンドを実行する
+4. 1で設定したURLにアクセスし、Jenkinsの管理画面からmasterとworkergaできていることを確認する
+```
+
+## オプション
+
+```
+
+1. variables.tfのworkers-countのdefaultの数値を変更する
+2. terraform aaplyし、先程開いたJenkinsの画面をリロードし、設定した通りにworkerの数が増えているかを確認する
+
 ```
